@@ -1039,6 +1039,19 @@ const StyledIphone = styled.div`
 		bottom: 12px;
 		border-radius: 4px;
 	}
+	.homebtn {
+		position: absolute;
+		left: 65%;
+		top: 69%;
+		transform: translateX(-50%);
+		width: 120px;
+		height: 4px;
+		bottom: 12px;
+		border-radius: 4px;
+		z-index: 1;
+		cursor: pointer;
+		transform: rotate(-30deg);
+	}
 `;
 
 export default StyledIphone;
