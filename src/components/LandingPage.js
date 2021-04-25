@@ -125,16 +125,16 @@ const StyledLandingPage = styled.div`
 	}
 
 	.social1 {
-		position: absolute;
-		top: 171%;
-		left: 12%;
+		position: relative;
+		bottom: -55%;
+		left: -50%;
 		color: ${(props) => (props.darkMode ? "white" : "#2867B2")};
 	}
 
 	.social2 {
-		position: absolute;
-		top: 187.5%;
-		left: 29%;
+		position: relative;
+		bottom: -93%;
+		left: -35%;
 		color: ${(props) => (props.darkMode ? "white" : "#2867B2")};
 	}
 
@@ -215,11 +215,39 @@ const LandingPage = ({ theme }) => {
 						src="https://media-exp1.licdn.com/dms/image/C4D03AQELgNHQ2Iwcag/profile-displayphoto-shrink_800_800/0/1582760083283?e=1624492800&v=beta&t=1FMVw-4oAmOY0LhDvmPtM4958NTMMVUnuS5i0A3bJlA"
 						alt="Daniela"
 					/>
+					<IconContext.Provider
+						value={{
+							size: "3em",
+							className: "social1",
+						}}
+					>
+						<a
+							href="https://www.linkedin.com/in/danielagomezsanchez/"
+							rel="noreferrer"
+							target="_blank"
+						>
+							<AiFillLinkedin />
+						</a>
+					</IconContext.Provider>
 					<img
 						className="profile-img2"
 						src="https://media-exp1.licdn.com/dms/image/C4D03AQEqDj2ucdnQcg/profile-displayphoto-shrink_800_800/0/1589453572566?e=1624492800&v=beta&t=Fiplm0dZ1DZr2rFtb0zbB2IUffJYOkjCv1F2eSeP0eM"
 						alt="George"
 					/>
+					<IconContext.Provider
+						value={{
+							size: "3em",
+							className: "social2",
+						}}
+					>
+						<a
+							href="https://www.linkedin.com/in/george-vinueza-g3or3/"
+							rel="noreferrer"
+							target="_blank"
+						>
+							<AiFillLinkedin />
+						</a>
+					</IconContext.Provider>
 				</div>
 				<div className="about-right">
 					<h3
@@ -240,34 +268,7 @@ const LandingPage = ({ theme }) => {
 					</p>
 				</div>
 			</section>
-			<IconContext.Provider
-				value={{
-					size: "3em",
-					className: "social1",
-				}}
-			>
-				<a
-					href="https://www.linkedin.com/in/danielagomezsanchez/"
-					rel="noreferrer"
-					target="_blank"
-				>
-					<AiFillLinkedin />
-				</a>
-			</IconContext.Provider>
-			<IconContext.Provider
-				value={{
-					size: "3em",
-					className: "social2",
-				}}
-			>
-				<a
-					href="https://www.linkedin.com/in/george-vinueza-g3or3/"
-					rel="noreferrer"
-					target="_blank"
-				>
-					<AiFillLinkedin />
-				</a>
-			</IconContext.Provider>
+
 			<section id="product" className="product-section">
 				<div className="product-left">
 					<h3
