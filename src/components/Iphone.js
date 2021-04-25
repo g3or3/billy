@@ -145,7 +145,7 @@ export const Iphone = () => {
 								</div>
 							</div>
 							<div className="text-question">
-								We noticed a new payment in your bank statement?
+								We noticed a new payment in your bank statement.
 								Would you like us to take a look?
 							</div>
 						</div>
