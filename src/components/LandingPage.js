@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 import example from "../assets/example.png";
 
 const StyledLandingPage = styled.div`
-	background-color: white;
+	background-color: ${(props) => (props.darkMode ? "#282828" : "white")};
 	margin-top: 5%;
 	font-family: "Nunito", sans-serif;
 
@@ -29,6 +29,7 @@ const StyledLandingPage = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		width: 50%;
+		color: ${(props) => (props.darkMode ? "white" : "#282828")};
 	}
 
 	.call-to-action-btns {
@@ -70,7 +71,7 @@ const StyledLandingPage = styled.div`
 	}
 
 	.logo {
-		width: 50%;
+		width: 70%;
 	}
 
 	#about {
@@ -96,7 +97,6 @@ const StyledLandingPage = styled.div`
 	.profile-img2 {
 		border-radius: 50%;
 		width: 35%;
-		box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.7);
 	}
 
 	.profile-img1 {
@@ -120,19 +120,22 @@ const StyledLandingPage = styled.div`
 		background-color: #7ed957;
 		color: white;
 		text-align: center;
-		box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.7);
+		box-shadow: 1px 1px 19px 1px
+			${(props) => (props.darkMode ? "white" : "rgba(0, 0, 0, 0.7)")};
 	}
 
 	.social1 {
 		position: absolute;
 		top: 171%;
 		left: 12%;
+		color: ${(props) => (props.darkMode ? "white" : "#2867B2")};
 	}
 
 	.social2 {
 		position: absolute;
 		top: 187.5%;
 		left: 29%;
+		color: ${(props) => (props.darkMode ? "white" : "#2867B2")};
 	}
 
 	.product-section {
@@ -152,7 +155,8 @@ const StyledLandingPage = styled.div`
 		background-color: #7ed957;
 		color: white;
 		text-align: center;
-		box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.7);
+		box-shadow: 1px 1px 19px 1px
+			${(props) => (props.darkMode ? "white" : "rgba(0, 0, 0, 0.7)")};
 	}
 
 	.product-right {
@@ -168,12 +172,13 @@ const StyledLandingPage = styled.div`
 
 	.example-img {
 		width: 100%;
+		border-radius: 20px;
 	}
 `;
 
-const LandingPage = () => {
+const LandingPage = ({ theme }) => {
 	return (
-		<StyledLandingPage>
+		<StyledLandingPage darkMode={theme}>
 			<section className="main-section">
 				<div className="main-left">
 					<h2 className="section-heading">
@@ -217,7 +222,15 @@ const LandingPage = () => {
 					/>
 				</div>
 				<div className="about-right">
-					<h3 className="section-heading">Meet the Team</h3>
+					<h3
+						className="section-heading"
+						style={{
+							fontFamily: "Amatic SC, cursive",
+							fontSize: "4rem",
+						}}
+					>
+						Meet the Team
+					</h3>
 					<p>
 						Daniela and George are both students at the University
 						of Central Florida majoring in Finance and pursuing a
@@ -229,7 +242,6 @@ const LandingPage = () => {
 			</section>
 			<IconContext.Provider
 				value={{
-					color: "#2867B2",
 					size: "3em",
 					className: "social1",
 				}}
@@ -244,7 +256,6 @@ const LandingPage = () => {
 			</IconContext.Provider>
 			<IconContext.Provider
 				value={{
-					color: "#2867B2",
 					size: "3em",
 					className: "social2",
 				}}
@@ -259,7 +270,15 @@ const LandingPage = () => {
 			</IconContext.Provider>
 			<section id="product" className="product-section">
 				<div className="product-left">
-					<h3 className="section-heading">How it Works</h3>
+					<h3
+						className="section-heading"
+						style={{
+							fontFamily: "Amatic SC, cursive",
+							fontSize: "4rem",
+						}}
+					>
+						How it Works
+					</h3>
 					<p>
 						Every month you start with a number – your total monthly
 						expenses. The goal is to “zero out” your monthly debt by

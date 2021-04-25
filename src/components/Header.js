@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+import "react-toggle/style.css";
+import Toggle from "react-toggle";
+
 const StyledHeader = styled.header`
-	background-color: white;
+	background-color: ${(props) => (props.darkMode ? "#282828" : "white")};
 	display: flex;
 	justify-content: space-between;
 
@@ -16,7 +19,7 @@ const StyledHeader = styled.header`
 	}
 
 	.nav-links {
-		width: 30%;
+		width: 40%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -25,7 +28,7 @@ const StyledHeader = styled.header`
 
 	.header-link {
 		text-decoration: none;
-		color: black;
+		color: ${(props) => (props.darkMode ? "white" : "#282828")};
 		font-family: "Amatic SC", cursive;
 		font-size: 2rem;
 	}
@@ -48,11 +51,12 @@ const StyledHeader = styled.header`
 	}
 `;
 
-const Header = () => {
+const Header = ({ theme, changeTheme }) => {
 	return (
-		<StyledHeader>
+		<StyledHeader darkMode={theme}>
 			<h1 className="header-name">Billy</h1>
 			<nav className="nav-links">
+				<Toggle className="toggle" onChange={changeTheme} />
 				<a className="header-link" href="#about">
 					About
 				</a>
